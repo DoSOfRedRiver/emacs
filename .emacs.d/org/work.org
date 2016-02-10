@@ -1,0 +1,47 @@
+* DONE Create document
+  CLOSED: [2016-02-10 Ср. 14:48]
+* TODO Discuss
+
+
+** Team work
+Discuss about problems in team, cooperation, task delegation.
+
+*** New field in database
+We constantly adding new fields in database, and change its structure. 
+May be we can add an structure that will contain all service fields?
+
+#+BEGIN_SRC js
+{
+  "promo": <url>,
+  "target": <url>,
+  "filters": {
+    "User-Agent": <value>,
+    "User-Domain": <value>
+  }
+  "service": {
+    "switchOnAt": <date>,
+    "lastTimeChecked": <date>
+  }
+}
+#+END_SRC
+
+*** About pull requests
+Two features peding approval. We need to merge them as soon as possible.
+
+*** Tree
+We hugely need tree implemetation to replace LinkProcessor class due LinkProcessor's delopment overhead.
+
+** Personal work
+Some questions about front-end and current tasks.
+
+*** "Check target button" feature
+Now "check target" action does not save the state of the target. 
+**** Do we need to implement this functionality now?
+**** What about availability logic? Do we need to implement it on server, or client?
+**** How about to implement filters by target status?
+
+*** Priorities
+What tasks have highest priority?
+
+*** Front-end
+What frond-end feautures we need? 
