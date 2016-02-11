@@ -25,7 +25,8 @@ May be we can add an structure that will contain all service fields?
 }
 #+END_SRC
 
-*** About pull requests
+*** DONE About pull requests
+    CLOSED: [2016-02-11 Чт. 17:58]
 Two features peding approval. We need to merge them as soon as possible.
 
 *** Tree
@@ -36,12 +37,44 @@ Some questions about front-end and current tasks.
 
 *** "Check target button" feature
 Now "check target" action does not save the state of the target. 
-**** Do we need to implement this functionality now?
-**** What about availability logic? Do we need to implement it on server, or client?
-**** How about to implement filters by target status?
+**** DONE Do we need to implement this functionality now?
+     CLOSED: [2016-02-11 Чт. 17:59]
+**** DONE What about availability logic? Do we need to implement it on server, or client?
+     CLOSED: [2016-02-11 Чт. 14:38]
+     Send status to front, like: WARNING, ERROR, GOOD
+     {
+       STATUS,
+       DATE,
+       MESSAGE
+     }
 
-*** Priorities
+**** CANCELED How about to implement filters by target status?
+     CLOSED: [2016-02-11 Чт. 14:39]
+     
+*** DONE Priorities
+    CLOSED: [2016-02-11 Чт. 14:44]
 What tasks have highest priority?
+**** Create promo with default target
+     CLOSED: [2016-02-11 Чт. 17:11]
+     Add default filters, like "other"
+     ASSIGNED TO Vladimir
+**** DONE Check device filter
+     CLOSED: [2016-02-11 Чт. 17:03]
+     Is it in develop branch?
+**** TODO Work with check target statuses
+     Add status to basy, async
+     Add date to fron
+**** TODO Authentification
+     NGINX
+     Merged to smartactors?
+**** TODO Bugs     
+**** TODO versions
 
-*** Front-end
-What frond-end feautures we need? 
+
+*** DONE Front-end
+    CLOSED: [2016-02-11 Чт. 17:59]
+    What frond-end feautures we need? 
+
+When promo created, create new target.
+Filters bug
+Target status
