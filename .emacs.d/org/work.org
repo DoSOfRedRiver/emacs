@@ -67,6 +67,8 @@ What tasks have highest priority?
 **** TODO Authentification
      NGINX
      Merged to smartactors?
+     [[ahvetskovich@gmail.com][about auth]
+     
 **** TODO Bugs     
 **** TODO versions
 
