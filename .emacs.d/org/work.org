@@ -54,8 +54,7 @@ Now "check target" action does not save the state of the target.
 *** DONE Priorities
     CLOSED: [2016-02-11 Чт. 14:44]
 What tasks have highest priority?
-**** Create promo with default target
-     CLOSED: [2016-02-11 Чт. 17:11]
+**** TODO Create promo with default target
      Add default filters, like "other"
      ASSIGNED TO Vladimir
 **** DONE Check device filter
