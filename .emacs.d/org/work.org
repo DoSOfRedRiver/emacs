@@ -1,8 +1,10 @@
 #+TAGS: BUG(b) TASK(t) MEETING(m) FEATURE(f)
 * DONE Meeting_1						    :MEETING:
   CLOSED: [2016-02-10 Ср. 14:48]
+
 ** Team work
     Discuss about problems in team, cooperation, task delegation.
+
 *** New field in database
 We constantly adding new fields in database, and change its structure. 
 May be we can add an structure that will contain all service fields?
@@ -32,7 +34,7 @@ We hugely need tree implemetation to replace LinkProcessor class due LinkProcess
 ** Personal work
 Some questions about front-end and current tasks.
 
-**** "Check target button" feature
+*** "Check target button" feature
 Now "check target" action does not save the state of the target. 
 - DONE Do we need to implement this functionality now?
      CLOSED: [2016-02-11 Чт. 17:59]
@@ -45,15 +47,17 @@ Now "check target" action does not save the state of the target.
        MESSAGE
      }
 
-**** CANCELED How about to implement filters by target status?
+*** CANCELED How about to implement filters by target status?
      CLOSED: [2016-02-11 Чт. 14:39]
      
 ** DONE Priorities
     CLOSED: [2016-02-11 Чт. 14:44]
     What tasks have highest priority?
+
 *** TODO Create promo with default target
     Add default filters, like "other"
     ASSIGNED TO Vladimir
+
 *** DONE Check device filter
      CLOSED: [2016-02-11 Чт. 17:03]
      Is it in develop branch?
@@ -66,8 +70,10 @@ Now "check target" action does not save the state of the target.
     Merged to smartactors?
     [[mailto:ahvetskovich@gmail.com][about-auth]
      
-*** IN PROGRESS Bugs     
+*** IN PROGRESS Bugs
+
 *** TODO Versions     
+
 ** DONE Front-end
     CLOSED: [2016-02-11 Чт. 17:59]
     What frond-end feautures we need? 
@@ -152,16 +158,21 @@ Now "check target" action does not save the state of the target.
 ** Add version field						       :TASK:
    DEADLINE: <2016-02-22 Пн>
    Add ~version~ field to database record.
+
 ** IN PROGRESS Split view and BL in feature/check-target 	       :TASK:
    BL not allowed in view, should extact BL function from view files on frontend.
+
 ** Encode promo and target					       :TASK:
    - To correctly handler promos and targets need to encode them into some kind of URL format.
    - Possibly create new pair of fields for encoded promo and target.
+
 ** Authentification 						    :FEATURE:
   DEADLINE: <2016-02-22 Пн>
    Implement authentification by socail networks.
+
 ** Add switch(On/Off)At front implementation			    :FEATURE:
    Add some kind of input (like calendar) to allow users to change promo (target?) switch off date.
+
 ** Default target						    :FEATURE:
    DEADLINE: <2016-02-22 Пн>
    User must create defaut target link on promo creating that will handle all 'unexpected' requests. 
