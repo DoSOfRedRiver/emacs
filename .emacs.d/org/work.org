@@ -1,7 +1,8 @@
-* DONE Meeting_1
+#+TAGS: BUG(b) TASK(t) MEETING(m) FEATURE(f)
+* DONE Meeting_1						    :MEETING:
   CLOSED: [2016-02-10 Ср. 14:48]
 ** Team work
-Discuss about problems in team, cooperation, task delegation.
+    Discuss about problems in team, cooperation, task delegation.
 *** New field in database
 We constantly adding new fields in database, and change its structure. 
 May be we can add an structure that will contain all service fields?
@@ -31,11 +32,11 @@ We hugely need tree implemetation to replace LinkProcessor class due LinkProcess
 ** Personal work
 Some questions about front-end and current tasks.
 
-*** "Check target button" feature
+**** "Check target button" feature
 Now "check target" action does not save the state of the target. 
-**** DONE Do we need to implement this functionality now?
+- DONE Do we need to implement this functionality now?
      CLOSED: [2016-02-11 Чт. 17:59]
-**** DONE What about availability logic? Do we need to implement it on server, or client?
+- DONE What about availability logic? Do we need to implement it on server, or client?
      CLOSED: [2016-02-11 Чт. 14:38]
      Send status to front, like: WARNING, ERROR, GOOD
      {
@@ -47,112 +48,120 @@ Now "check target" action does not save the state of the target.
 **** CANCELED How about to implement filters by target status?
      CLOSED: [2016-02-11 Чт. 14:39]
      
-
-*** DONE Priorities
+** DONE Priorities
     CLOSED: [2016-02-11 Чт. 14:44]
-What tasks have highest priority?
-**** TODO Create promo with default target
-     Add default filters, like "other"
-     ASSIGNED TO Vladimir
-**** DONE Check device filter
+    What tasks have highest priority?
+*** TODO Create promo with default target
+    Add default filters, like "other"
+    ASSIGNED TO Vladimir
+*** DONE Check device filter
      CLOSED: [2016-02-11 Чт. 17:03]
      Is it in develop branch?
-**** NEXT Work with check target statuses
+*** DONE Work with check target statuses
+     CLOSED: [2016-02-17 Ср 12:32]
      Add status to basy, async
      Add date to fron
-**** TODO Authentification
-     NGINX
-     Merged to smartactors?
-     [[ahvetskovich@gmail.com][about auth]
+*** TODO Authentification
+    NGINX
+    Merged to smartactors?
+    [[mailto:ahvetskovich@gmail.com][about-auth]
      
-**** NEXT Bugs     
-**** TODO versions
-
-
-*** DONE Front-end
+*** IN PROGRESS Bugs     
+*** TODO Versions     
+** DONE Front-end
     CLOSED: [2016-02-11 Чт. 17:59]
     What frond-end feautures we need? 
 
-When promo created, create new target.
-Filters bug
-Target status
+    - When promo created, create new target.
+    - Filters bug
+    - Target status
 
-
-* DONE Meeting_2
+* DONE Meeting_2						    :MEETING:
   CLOSED: [2016-02-15 Пн. 17:14]
 
 ** Authorization 
-Already done in lottery
+    Already done in lottery
 
 ** Dumb server
-Server stop working while 'check target' process in progress.
-
-Debug
+    Server stop working while 'check target' process in progress.
+    - Debug
 
 ** Check target
-Async check target button work.
+    Async check target button work.
 
 ** Rework target and promo encodings
-Validate promos and targets.
+    Validate promos and targets.
 
+* TODO
+** Bug list								:BUG:
+   List of found bugs is available in googledocs.
 
-* TODO Bugs
+** Promo creation bug							:BUG:
+   On create promo empty target already exists on frontend.
+   This bug about reduce operation on front.
 
-** Bug list
-List of found bugs is available in googledocs.
-
-** Promo creation bug
-On create promo empty target already exists on frontend.
-This bug about reduce operation on front.
-
-** CANCELLED New target not visible on create
+** CANCELLED New target not visible on create				:BUG:
    CLOSED: [2016-02-16 Вт. 19:14]
    - State "CANCELLED"  from ""           [2016-02-16 Вт. 19:14] \\
      Cause of duplication
-Rare bug? While create new target, this target does not appears in admin
-panel.
-> or when an target previously deleted?
+   Rare bug? While create new target, this target does not appears in admin
+   panel.
+   - or when an target previously deleted?
 
-** DONE Edit target does not adds switch(On/Off)At fields
+** DONE Edit target does not adds switch(On/Off)At fields		:BUG:
    CLOSED: [2016-02-15 Пн. 19:00]
-When you trying to edit target url, the time fields does not injects. So, the 'check target' does not work for
-corrupted targets.
+   When you trying to edit target url, the time fields does not injects. So, the 'check target' does not work for
+   corrupted targets.
 
-** DONE Set target status
+** DONE Set target status						:BUG:
    CLOSED: [2016-02-14 Вс. 20:04]
-Throws 'Can not read property', and stops execution, so if some targets is not colored yet, they don't wan't to be
-colored.
+   Throws 'Can not read property', and stops execution, so if some targets is not colored yet, they don't wan't to be
+   colored.
 
-** NEXT New target does not displayed
-Rare bug? Recently added target does not displayed. Apprears on more then 3 targets? Cause of long database save?
+** IN PROGRESS New target does not displayed				:BUG:
+   Rare bug? Recently added target does not displayed. Apprears on more then 3 targets? Cause of long database save?
 
-** DONE New target check status
+** DONE New target check status						:BUG:
    CLOSED: [2016-02-15 Пн. 18:57]
-HTTP status doen't checked for newly created targets.
+   HTTP status doen't checked for newly created targets.
 
-** CANCELLED Not enough filters in check target
+** CANCELLED Not enough filters in check target				:BUG:
    CLOSED: [2016-02-15 Пн. 18:57]
    - State "CANCELLED"  from ""           [2016-02-15 Пн. 18:57]
-Check target map does not use enough filters while trying to search and target. So, it can be two equal targets with different filters and that sutiation can corrupt search result.
+   Check target map does not use enough filters while trying to search and target. So, it can be two equal targets with different filters and that sutiation can corrupt search result.
 
-** Null target
+** Null target								:BUG:
    Null targets does not allowed.
-** WAITING Equals target check statuses
-   - State "WAITING"    from "NEXT"       [2016-02-16 Вт. 19:15] \\
+   To fix try to add [[Default target][default target]]
+   
+** WAITING Equals target check statuses					:BUG:
+   - State "WAITING"    from "IN PROGRESS"       [2016-02-16 Вт. 19:15] \\
      Wait for decision about injecting ids into database record
-'Check target' does't work correctly with equals targets, cause of database 
-search query. This problem refers to "Not enough filters in check target" bug.
-
-*** TODO Fix edit target event
-So when we edit target the message with HTTP status should disappers.
+   'Check target' does't work correctly with equals targets, cause of database 
+   search query. This problem refers to "Not enough filters in check target" bug.
+   
+*** DONE Fix edit target event
+    CLOSED: [2016-02-17 Ср 12:56]
+    So when we edit target the message with HTTP status should disappers.
 
 *** TODO Check target on create
-Server does not checks targets on 'target create' action.
+    Server does not checks targets on 'target create' action.
 
-> So as 'check target' depends on id, that does not exists after creation, front send null id, then, after querying url id saves 'with query result'.
+    - So as 'check target' depends on id, that does not exists after creation, front send null id, then, after querying url id saves 'with query result'.
 
-* TODO Todo
-
-** Add version field
-
-** Split view and bl in feature/check-target
+** Add version field						       :TASK:
+   DEADLINE: <2016-02-22 Пн>
+   Add ~version~ field to database record.
+** IN PROGRESS Split view and BL in feature/check-target 	       :TASK:
+   BL not allowed in view, should extact BL function from view files on frontend.
+** Encode promo and target					       :TASK:
+   - To correctly handler promos and targets need to encode them into some kind of URL format.
+   - Possibly create new pair of fields for encoded promo and target.
+** Authentification 						    :FEATURE:
+  DEADLINE: <2016-02-22 Пн>
+   Implement authentification by socail networks.
+** Add switch(On/Off)At front implementation			    :FEATURE:
+   Add some kind of input (like calendar) to allow users to change promo (target?) switch off date.
+** Default target						    :FEATURE:
+   DEADLINE: <2016-02-22 Пн>
+   User must create defaut target link on promo creating that will handle all 'unexpected' requests. 
