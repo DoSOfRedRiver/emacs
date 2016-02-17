@@ -1,16 +1,17 @@
 (setq org-log-done t)
 (setq org-use-fast-todo-selection t)
+(setq org-default-notes-file "~/org/notes.org")
 (setq org-agenda-files (list
-			"~/org/work.org"
-			"~/org/tasks.org"))
+			"~/.emacs.d/org/work.org"
+			"~/.emacs.d/org/tasks.org"))
 
 (setq org-todo-keywords
-      (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
+      (quote ((sequence "TODO(t)" "|" "IN PROGRESS(n)" "|" "DONE(d)")
               (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE" "MEETING"))))
 
 (setq org-todo-keyword-faces
       (quote (("TODO" :foreground "red" :weight bold)
-              ("PROGRESS" :foreground "blue" :weight bold)
+              ("IN PROGRESS" :foreground "blue" :weight bold)
               ("DONE" :foreground "forest green" :weight bold)
               ("WAITING" :foreground "orange" :weight bold)
               ("HOLD" :foreground "magenta" :weight bold)
