@@ -98,7 +98,7 @@ Now "check target" action does not save the state of the target.
 ** Rework target and promo encodings
     Validate promos and targets.
 
-* TODO
+* TODO todo [9/9]
 ** Bug list								:BUG:
    List of found bugs is available in googledocs.
 
@@ -140,9 +140,11 @@ Now "check target" action does not save the state of the target.
    Null targets does not allowed.
    To fix try to add [[Default target][default target]]
    
-** WAITING Equals target check statuses					:BUG:
+** DONE Equals target check statuses					:BUG:
+   CLOSED: [2016-02-18 Чт. 18:34]
+   - State "IN PROGRESS" from "WAITING"    [2016-02-18 Чт. 18:12]
    - State "WAITING"    from "IN PROGRESS"       [2016-02-16 Вт. 19:15] \\
-     Wait for decision about injecting ids into database record
+     Wait for decision about injecting ids into database record.
    'Check target' does't work correctly with equals targets, cause of database 
    search query. This problem refers to "Not enough filters in check target" bug.
    
@@ -150,7 +152,8 @@ Now "check target" action does not save the state of the target.
     CLOSED: [2016-02-17 Ср 12:56]
     So when we edit target the message with HTTP status should disappers.
 
-*** TODO Check target on create
+*** DONE Check target on create
+    CLOSED: [2016-02-18 Чт. 19:21]
     Server does not checks targets on 'target create' action.
 
     - So as 'check target' depends on id, that does not exists after creation, front send null id, then, after querying url id saves 'with query result'.
@@ -159,13 +162,14 @@ Now "check target" action does not save the state of the target.
    DEADLINE: <2016-02-22 Пн>
    Add ~version~ field to database record.
 
-** IN PROGRESS Split view and BL in feature/check-target 	       :TASK:
+** DONE Split view and BL in feature/check-target		       :TASK:
+   CLOSED: [2016-02-18 Чт. 19:21]
    BL not allowed in view, should extact BL function from view files on frontend.
 
 ** Encode promo and target					       :TASK:
    - To correctly handler promos and targets need to encode them into some kind of URL format.
    - Possibly create new pair of fields for encoded promo and target.
-
+     
 ** Authentification 						    :FEATURE:
   DEADLINE: <2016-02-22 Пн>
    Implement authentification by socail networks.
