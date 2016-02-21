@@ -81,7 +81,7 @@ Now "check target" action does not save the state of the target.
     - When promo created, create new target.
     - Filters bug
     - Target status
-
+      
 * DONE Meeting_2						    :MEETING:
   CLOSED: [2016-02-15 Пн. 17:14]
 
@@ -98,11 +98,11 @@ Now "check target" action does not save the state of the target.
 ** Rework target and promo encodings
     Validate promos and targets.
 
-* TODO todo [9/9]
-** Bug list								:BUG:
+* TODO todo [7/16]
+** TODO Bug list							:BUG:
    List of found bugs is available in googledocs.
 
-** Promo creation bug							:BUG:
+** TODO Promo creation bug						:BUG:
    On create promo empty target already exists on frontend.
    This bug about reduce operation on front.
 
@@ -127,16 +127,16 @@ Now "check target" action does not save the state of the target.
 ** IN PROGRESS New target does not displayed				:BUG:
    Rare bug? Recently added target does not displayed. Apprears on more then 3 targets? Cause of long database save?
 
-** DONE New target check status						:BUG:
-   CLOSED: [2016-02-15 Пн. 18:57]
-   HTTP status doen't checked for newly created targets.
+** TODO New target check status						:BUG:
+   HTTP status doesn't checked for newly created targets.
+   To fix try to add [[Default target][default target]]
 
 ** CANCELLED Not enough filters in check target				:BUG:
    CLOSED: [2016-02-15 Пн. 18:57]
    - State "CANCELLED"  from ""           [2016-02-15 Пн. 18:57]
    Check target map does not use enough filters while trying to search and target. So, it can be two equal targets with different filters and that sutiation can corrupt search result.
 
-** Null target								:BUG:
+** TODO Null target							:BUG:
    Null targets does not allowed.
    To fix try to add [[Default target][default target]]
    
@@ -158,7 +158,7 @@ Now "check target" action does not save the state of the target.
 
     - So as 'check target' depends on id, that does not exists after creation, front send null id, then, after querying url id saves 'with query result'.
 
-** Add version field						       :TASK:
+** TODO Add version field					       :TASK:
    DEADLINE: <2016-02-22 Пн>
    Add ~version~ field to database record.
 
@@ -166,17 +166,17 @@ Now "check target" action does not save the state of the target.
    CLOSED: [2016-02-18 Чт. 19:21]
    BL not allowed in view, should extact BL function from view files on frontend.
 
-** Encode promo and target					       :TASK:
+** TODO Encode promo and target					       :TASK:
    - To correctly handler promos and targets need to encode them into some kind of URL format.
    - Possibly create new pair of fields for encoded promo and target.
      
-** Authentification 						    :FEATURE:
-  DEADLINE: <2016-02-22 Пн>
+** TODO Authentification					    :FEATURE:
+   DEADLINE: <2016-02-22 Пн>
    Implement authentification by socail networks.
 
-** Add switch(On/Off)At front implementation			    :FEATURE:
+** TODO Add switch(On/Off)At front implementation		    :FEATURE:
    Add some kind of input (like calendar) to allow users to change promo (target?) switch off date.
 
-** Default target						    :FEATURE:
+** TODO Default target						    :FEATURE:
    DEADLINE: <2016-02-22 Пн>
    User must create defaut target link on promo creating that will handle all 'unexpected' requests. 
