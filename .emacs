@@ -8,8 +8,9 @@
 (load "~/.emacs.d/rust-mode")
 (load "~/.emacs.d/hydra-snippets")
 (load "~/.emacs.d/key-chord")
-(load "~/.emacs.d/org-dashboard/org-dashboard")
+;;(load "~/.emacs.d/org-dashboard/org-dashboard")
 (load "~/.emacs.d/agenda-settings")
+(load "~/.emacs.d/tabbar-settings")
 
 
 ;;functions
@@ -30,6 +31,7 @@
 (key-chord-define-global "bt" 'ztree-diff)
 
 
+
 ;;hydra
 ;;ztree
 ;;[helm]
@@ -46,10 +48,10 @@
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#2d3743" "#ff4242" "#74af68" "#dbdb95" "#34cae2" "#008b8b" "#00ede1" "#e1e1e0"])
- '(custom-enabled-themes (quote (solarized)))
+ '(custom-enabled-themes (quote (manoj-dark)))
  '(custom-safe-themes
    (quote
-    ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default))))
+    ("23cf1bbd82721df1785aa1a10f742e555d6ea41921b65fab0345947bdd56c3f8" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
