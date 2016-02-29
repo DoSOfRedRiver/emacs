@@ -98,11 +98,12 @@ Now "check target" action does not save the state of the target.
 ** Rework target and promo encodings
     Validate promos and targets.
 
-* TODO todo [7/16]
+* TODO todo [8/17]
 ** TODO Bug list							:BUG:
    List of found bugs is available in googledocs.
 
-** TODO Promo creation bug						:BUG:
+** DONE Promo creation bug						:BUG:
+   CLOSED: [2016-02-29 Пн. 21:01]
    On create promo empty target already exists on frontend.
    This bug about reduce operation on front.
 
@@ -124,7 +125,7 @@ Now "check target" action does not save the state of the target.
    Throws 'Can not read property', and stops execution, so if some targets is not colored yet, they don't wan't to be
    colored.
 
-** IN PROGRESS New target does not displayed				:BUG:
+** TODO New target does not displayed					:BUG:
    Rare bug? Recently added target does not displayed. Apprears on more then 3 targets? Cause of long database save?
 
 ** TODO New target check status						:BUG:
@@ -167,7 +168,7 @@ Now "check target" action does not save the state of the target.
    BL not allowed in view, should extact BL function from view files on frontend.
 
 ** TODO Encode promo and target					       :TASK:
-   - To correctly handler promos and targets need to encode them into some kind of URL format.
+   - To correctly handle promos and targets need to encode them into some kind of URL format.
    - Possibly create new pair of fields for encoded promo and target.
      
 ** TODO Authentification					    :FEATURE:
@@ -177,6 +178,14 @@ Now "check target" action does not save the state of the target.
 ** TODO Add switch(On/Off)At front implementation		    :FEATURE:
    Add some kind of input (like calendar) to allow users to change promo (target?) switch off date.
 
-** TODO Default target						    :FEATURE:
-   DEADLINE: <2016-02-22 Пн>
+** IN PROGRESS Default target					    :FEATURE:
    User must create defaut target link on promo creating that will handle all 'unexpected' requests. 
+
+*** TODO Check for availability
+Check avalability when tryis to go to targets menu?
+
+*** TODO Change view on save button click
+Hide button, or just reload targets menu.
+
+** TODO Fix inner strong type wrappers				    :FEATURE:
+Now inner strong type wrapper does not supported by smartactors. Need to implement this functionality and change used wrappers.
