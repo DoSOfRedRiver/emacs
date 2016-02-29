@@ -1,4 +1,4 @@
-(setq org-log-done "note")
+(setq org-log-done t)
 (setq org-use-fast-todo-selection t)
 (setq org-default-notes-file "~/org/notes.org")
 (setq org-agenda-files (list
@@ -6,8 +6,8 @@
 			"~/.emacs.d/org/tasks.org"))
 
 (setq org-todo-keywords
-      (quote ((sequence "TODO(t)" "|" "IN PROGRESS(n)"  "WAITING(w@/!)"  "HOLD(h@/!)" "|" "DONE(d)" "CANCELLED(c@/!)")
-              (sequence "PHONE" "MEETING"))))
+      (quote ((sequence "TODO(t)" "|" "IN PROGRESS(n)" "|" "DONE(d)")
+              (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE" "MEETING"))))
 
 (setq org-todo-keyword-faces
       (quote (("TODO" :foreground "red" :weight bold)
