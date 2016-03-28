@@ -98,11 +98,13 @@ Now "check target" action does not save the state of the target.
 ** Rework target and promo encodings
     Validate promos and targets.
 
-* TODO
-** Bug list								:BUG:
+* TODO todo [8/17]
+** TODO Bug list							:BUG:
    List of found bugs is available in googledocs.
 
-** Promo creation bug							:BUG:
+** DONE Promo creation bug						:BUG:
+   CLOSED: [2016-02-29 Пн. 21:01]
+
    On create promo empty target already exists on frontend.
    This bug about reduce operation on front.
 
@@ -124,7 +126,7 @@ Now "check target" action does not save the state of the target.
    Throws 'Can not read property', and stops execution, so if some targets is not colored yet, they don't wan't to be
    colored.
 
-** IN PROGRESS New target does not displayed				:BUG:
+** TODO New target does not displayed					:BUG:
    Rare bug? Recently added target does not displayed. Apprears on more then 3 targets? Cause of long database save?
 
 ** DONE New target check status						:BUG:
@@ -162,8 +164,8 @@ Now "check target" action does not save the state of the target.
 ** IN PROGRESS Split view and BL in feature/check-target 	       :TASK:
    BL not allowed in view, should extact BL function from view files on frontend.
 
-** Encode promo and target					       :TASK:
-   - To correctly handler promos and targets need to encode them into some kind of URL format.
+** TODO Encode promo and target					       :TASK:
+   - To correctly handle promos and targets need to encode them into some kind of URL format.
    - Possibly create new pair of fields for encoded promo and target.
 
 ** Authentification 						    :FEATURE:
@@ -173,6 +175,128 @@ Now "check target" action does not save the state of the target.
 ** Add switch(On/Off)At front implementation			    :FEATURE:
    Add some kind of input (like calendar) to allow users to change promo (target?) switch off date.
 
-** Default target						    :FEATURE:
-   DEADLINE: <2016-02-22 Пн>
+** IN PROGRESS Default target					    :FEATURE:
    User must create defaut target link on promo creating that will handle all 'unexpected' requests. 
+
+*** TODO Check for availability
+Check avalability when tryis to go to targets menu?
+
+*** TODO Change view on save button click
+Hide button, or just reload targets menu.
+
+** TODO Fix inner strong type wrappers				    :FEATURE:
+   Now inner strong type wrapper does not supported by smartactors. Need to implement this functionality and change used wrappers.
+* Refactoring
+
+** US01
+   - ~невозможность выполнить постусловие всегда обозначает вылет исключения из актора~
+   - ~имейте в виду исключения выбрасываются нами, только когда не можем выполнить постусловие~
+
+*** A001 Добавить в сообщение поле Domain, которое содержит домен третьего уровня из запрашиваемого URL
+    Например, если пришел запрос hwdtech.1derlink.com/asdfgh, то результатом работы этого актора является 
+    поле Domain, содержащее "hwdtech".
+    
+    *Предусловие*: обрабатываеый url содержит в себе компонет - домен третьего уровня, но не четвертого и 
+    последующих - нарушение предусловия - исключение
+    
+    *Постусловие*: сообщение содержит непустое поле Domain
+    
+    *Уже имеется*:
+    [[ContextProvider][Context provider]] - может вытащить Domain из сообщения.
+
+*** A002 Добавить в сообщение поле UrlId, которое содержит фрагмент XXXXX промоссылки
+    Например, если пришел запрос hwdtech.1derlink.com/asdfgh, то результатом работы этого актора является 
+    поле UrlId, содержащее "asdfg".
+    
+    *Предусловие*: обрабатываемый url содержит в себе фрагмент XXXXXX
+    *Постусловие*: сообщение содержит непустое поле UrlId
+     
+    *Уже имеется*:
+    [[ContextProvider][Context provider]] - может вытащить uri из сообщения.
+
+*** A003 Найти по полям Domain, UrlId, Device, Manufacture, Country и др. нужный url для редиректа и записать его в поле redirect
+    Поиск ведется по дереву - первый уровень этого дерева - домены клиентов, второй уровень - uriId и только 
+    потом уже параметры, которые были извлечены из контекста запроса.
+    
+    *Предусловие*: все поля непустые
+    *Постусловие*: поле redirect либо пусто, либо содержит нужный url
+    
+    *Уже имеется*:
+    В данный момент дерево поиска не реализовано. Поиск по базе с множеством условий крайне неудобен.
+
+*** А004 Выполнить редирект на нужную страницу
+    Сообщение содержит непустое поле redirect c url. произвести редирект по заданному url
+     
+    *Предусловие*: поле redirect содержит url
+
+    *Постусловие*: пользователю отправлен ответ с редиректом на заданную страницу
+
+    *Уже имеется*: [[Как работает редирект?][Как работает редирект?]]
+
+*** A005 Возвратить пользователю страницу с 404 кодом ошибки
+    В ответ на запросшенный url отправить пользователю html страницу от имени 1derlink с 404 кодом ошибки
+
+    *Постусловие*: пользователю отправлена страница с 404 кодом ошибки
+    
+    *Уже имеется*: [[Как работает редирект?][Как работает редирект?]]
+
+*** A006 Выбрать редирект, либо 404 ошибку
+    Если сообщение содержит поле redirect c заданным url, то перенаправить сообщение на актор A004
+
+    *Постусловие*: следующий актор в карте либо A004, либо A005
+
+    *Уже имеется*: [[Как работает редирект?][Как работает редирект?]]
+
+*** A007 Добавить в сообщение поле Device, которое содержит идентификатор класса устройств, с которого обращается незарегистрированный пользователь
+    Принцип тот же, что и для актора A001. В случае невозможности определить устройство в поле пишется 
+    значение other.
+    
+    - Рекомендуется для таких полей пользоваться значениями, которые использует [[https://metrika.yandex.ru/][yandex.metrika]]
+    - Обратите внимание, что яндекс метрика некоторые параметры группирует, например, смартфон Asus, смартфон самсунг
+    - У нас может появиться потребность задать правило для всех смартфонов, либо только для смартфонов самсунг
+    - Рекомендуется разбить значение смартфон самсунг на два поля Device и Manufacture
+
+    *Предусловие*: любой произвольный запрос
+
+    *Постусловие*: сообщение содержит непустое поле Device
+
+    *Уже имеется*: 
+    1) метод ~LinkProcessor.detectDeviceType(String)~, который по значению User-Agent определяет тип девайса: detectDeviceType(User-Agent) \in {mobile, tablet, desktop}
+    2) [[ContextProvider][Context provider]] - может вытащит User-Agent пользователя из контекста сообщения.
+
+*** A008 Добавить в сообщение поле Manufacture, которое содержит наименование производителя устройства, с которого обращается незарегистрированный пользователь
+    В случае невозможности определить производителя в поле пишется значение other
+
+    *Предусловие*: любой произвольный запрос
+
+    *Постусловие*: сообщение содержит непустое поле Manufacture
+
+    *Уже имеется*: в данный момент никаких методов для определения девайся пользователя на проекте нет.
+
+*** A009 Добавить в сообщение поле Country, которое содержит наименование страны, из которой обращается незарегистрированный пользователь
+    В случае невозможности определить страну в поле пишется значение other
+
+    *Предусловие*: любой произвольный запрос
+
+    *Постусловие*: сообщение содержит непустое поле Country
+
+    *Уже имеется*: в данный момент никаких методов для определения страны пользователя на проекте нет.
+    
+** Замечания
+   - При выполнении акторов A007, A008, A009 и т.д. ожидается, что никаких эксепшенов вылетать не может, то есть все checkedexception должны быть отловлены внутри. Если же все-таки какое-либо исключение вылетает - это ошибка, которая была допущена в коде, так как мы ожидали, что исключений не будет, надо будет возвратить страницу с Internal Server Error - так как произошла непредвиденная ошибка именно у нас.
+   - A003, A006 должны работать без ошибок, поэтому замечание тоже, что и для A007-A009...
+   - Исключения в A001, A002 могут быть вызваны неправильным форматом урла, а значит в этом случае 
+   вылет из этих акторов по исключению должен приводить в отправке 404 ошибки
+   
+** Контекст сообщения
+    Приходит внутри сообщения. Содержит HTTP заголовки, домен третьего уровня, ip-адрес пользователя etc.
+    
+** ContextProvider
+    Вспомогательный класс, который умеет работать с [[Контекст сообщения][контекстом сообщения]].
+
+** Как работает редирект?
+    В текущей реализации для обработки HTTP GET запросов всегда используется одна и та же цепочка.
+    Перенаправление производится в соответствии с наличием поля ~redirectTo~. То есть,
+    после отработки цепочки, обрабатывающей GET, конечная точка проверяет наличие данного поля,
+    и указывает его содержимое в качестве redirect target. В случае же отсутствия поля ~redirectTo~
+    пользователю будет возвращён HTTP 404.
