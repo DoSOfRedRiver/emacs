@@ -1,0 +1,16 @@
+;; Emacs-W3 HTTP cookies file
+;; Automatically generated file!!! DO NOT EDIT!!!
+
+(setq url-cookie-storage
+ '((".youtube.com"
+  [url-cookie "httponly" nil "17-Sep-2016 09:36:23.00 GMT" "/" ".youtube.com" nil]
+  [url-cookie "PREF" "f1=50000000" "17-Sep-2016 09:36:23.00 GMT" "/" ".youtube.com" nil]
+  [url-cookie "VISITOR_INFO1_LIVE" "bTCMTyfo2HE" "17-Sep-2016 09:36:23.00 GMT" "/" ".youtube.com" nil]))
+)
+(setq url-cookie-secure-storage
+ 'nil)
+
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; End:

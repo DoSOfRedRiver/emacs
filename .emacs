@@ -8,8 +8,9 @@
 (load "~/.emacs.d/rust-mode")
 (load "~/.emacs.d/hydra-snippets")
 (load "~/.emacs.d/key-chord")
-(load "~/.emacs.d/org-dashboard/org-dashboard")
 (load "~/.emacs.d/agenda-settings")
+(load "~/.emacs.d/tabbar-settings")
+;;(load "~/.emacs.d/org-dashboard/org-dashboard")
 
 
 ;;functions
@@ -20,14 +21,29 @@
 
 ;;key settings
 (define-key global-map (kbd "C-x p") 'prev-window)
-(global-set-key (kbd "C-c g") 'google-this-mode-submap)
+
 
 ;;chords
 (require 'key-chord)
+(setq key-chord-two-keys-delay 0.3)
 (key-chord-mode 1)
 (key-chord-define-global "BB" 'beginning-of-buffer)
 (key-chord-define-global "vt" 'ztree-dir)
 (key-chord-define-global "bt" 'ztree-diff)
+(key-chord-define-global "FS" 'toggle-frame-fullscreen)
+(key-chord-define-global "DD" '(lambda ()
+                                    (interactive)
+                                    (move-beginning-of-line 1)
+                                    (kill-line)
+                                    (yank)
+                                    (open-line 1)
+                                    (next-line 1)
+                                    (yank)))
+                                    
+
+
+;;mods hooks
+(add-hook 'javascript-mode #'js2-mode)
 
 
 ;;hydra
@@ -35,6 +51,25 @@
 ;;[helm]
 
 
+;;variable settings
+(setq-default indent-tabs-mode nil)
+
+
+;;configure other
+
+;;company settings
+(global-company-mode)
+(setq company-idle-delay 0.2)
+(setq company-minimum-prefix-length 1)
+
+(prettify-symbols-mode t)
+
+;;(setq racer-rust-src-path "d:/rust_src/rustc-1.6.0/src/")
+(setenv "RUST_SRC_PATH" "/c/rust_src/rustc-1.6.0/src/")
+
+(setq scheme-program-name "mit-scheme")
+
+(toggle-frame-fullscreen)
 
 
 (custom-set-variables
@@ -46,13 +81,17 @@
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#2d3743" "#ff4242" "#74af68" "#dbdb95" "#34cae2" "#008b8b" "#00ede1" "#e1e1e0"])
- '(custom-enabled-themes (quote (solarized)))
+ '(custom-enabled-themes (quote (whiteboard)))
  '(custom-safe-themes
    (quote
-    ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default))))
+    ("23cf1bbd82721df1785aa1a10f742e555d6ea41921b65fab0345947bdd56c3f8" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;;this load is necessary because tabbar-buffer-groups does not work on one
+;;initialization script.
+;;(load "~/.emacs.d/tabbar-settings")
