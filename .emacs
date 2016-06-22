@@ -5,6 +5,7 @@
 
 
 ;;loads
+(load "~/.emacs.d/el-get-settings")
 (load "~/.emacs.d/rust-mode")
 (load "~/.emacs.d/hydra-snippets")
 (load "~/.emacs.d/key-chord")
