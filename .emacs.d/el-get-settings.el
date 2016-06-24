@@ -6,28 +6,11 @@
   (el-get 'sync)
 
   (setq required-packages
-        (append
-         '(
-           company-mode
-           emacs-neotree
-           flycheck
-           git-gutter
-           helm
-           highlight-parentheses
-           indent-guide
-           js2-mode
-           json-mode
-           magit
-           markdown-mode
-           multiple-cursors
-           undo-tree
-           yasnippet
-           yasnippet-snippets
-           tabbar
-           rust-mode
-           ztree
-	   hydra
-           )
+        (append '( company-mode emacs-neotree flycheck git-gutter
+         helm highlight-parentheses indent-guide js2-mode
+         json-mode magit markdown-mode multiple-cursors undo-tree
+         yasnippet yasnippet-snippets tabbar rust-mode ztree
+         hydra sunrise-commander )
          (mapcar 'el-get-as-symbol (mapcar 'el-get-source-name el-get-sources))))
   
   (el-get 'sync required-packages)
