@@ -18,4 +18,4 @@
                                  (next-line 1)
                                  (yank)))
 
-(define-key global-map (kdb "C-tab") 'ibuffer)
+(define-key global-map (kbd "C-<tab>") 'ibuffer)
