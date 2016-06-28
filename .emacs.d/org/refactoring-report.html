@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>work</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="work"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2016-03-05T17:19+0600"/>
+<meta name="author" content="user"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">work</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Refactoring</a>
+<ul>
+<li><a href="#sec-1-1">1.1 US01</a>
+<ul>
+<li><a href="#sec-1-1-1">1.1.1 A001 Добавить в сообщение поле Domain, которое содержит домен третьего уровня из запрашиваемого URL</a></li>
+<li><a href="#sec-1-1-2">1.1.2 A002 Добавить в сообщение поле UrlId, которое содержит фрагмент XXXXX промоссылки</a></li>
+<li><a href="#sec-1-1-3">1.1.3 A003 Найти по полям Domain, UrlId, Device, Manufacture, Country и др. нужный url для редиректа и записать его в поле redirect</a></li>
+<li><a href="#sec-1-1-4">1.1.4 А004 Выполнить редирект на нужную страницу</a></li>
+<li><a href="#sec-1-1-5">1.1.5 A005 Возвратить пользователю страницу с 404 кодом ошибки</a></li>
+<li><a href="#sec-1-1-6">1.1.6 A006 Выбрать редирект, либо 404 ошибку</a></li>
+<li><a href="#sec-1-1-7">1.1.7 A007 Добавить в сообщение поле Device, которое содержит идентификатор класса устройств, с которого обращается незарегистрированный пользователь</a></li>
+<li><a href="#sec-1-1-8">1.1.8 A008 Добавить в сообщение поле Manufacture, которое содержит наименование производителя устройства, с которого обращается незарегистрированный пользователь</a></li>
+<li><a href="#sec-1-1-9">1.1.9 A009 Добавить в сообщение поле Country, которое содержит наименование страны, из которой обращается незарегистрированный пользователь</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2">1.2 Замечания</a></li>
+<li><a href="#sec-1-3">1.3 Контекст сообщения</a></li>
+<li><a href="#sec-1-4">1.4 ContextProvider</a></li>
+<li><a href="#sec-1-5">1.5 Как работает редирект?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Refactoring</h2>
+<div class="outline-text-2" id="text-1">
+
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> US01</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<ul>
+<li><code>невозможность выполнить постусловие всегда обозначает вылет исключения из актора</code>
+</li>
+<li><code>имейте в виду исключения выбрасываются нами, только когда не можем выполнить постусловие</code>
+</li>
+</ul>
+
+
+
+</div>
+
+<div id="outline-container-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> A001 Добавить в сообщение поле Domain, которое содержит домен третьего уровня из запрашиваемого URL</h4>
+<div class="outline-text-4" id="text-1-1-1">
+
+<p>    Например, если пришел запрос hwdtech.1derlink.com/asdfgh, то результатом работы этого актора является 
+    поле Domain, содержащее "hwdtech".
+</p>
+<p>    
+    <b>Предусловие</b>: обрабатываеый url содержит в себе компонет - домен третьего уровня, но не четвертого и 
+    последующих - нарушение предусловия - исключение
+</p>
+<p>    
+    <b>Постусловие</b>: сообщение содержит непустое поле Domain
+</p>
+<p>    
+    <b>Уже имеется</b>:
+    <a href="#sec-1-4">Context provider</a> - может вытащить Domain из сообщения.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> A002 Добавить в сообщение поле UrlId, которое содержит фрагмент XXXXX промоссылки</h4>
+<div class="outline-text-4" id="text-1-1-2">
+
+<p>    Например, если пришел запрос hwdtech.1derlink.com/asdfgh, то результатом работы этого актора является 
+    поле UrlId, содержащее "asdfg".
+</p>
+<p>    
+    <b>Предусловие</b>: обрабатываемый url содержит в себе фрагмент XXXXXX
+    <b>Постусловие</b>: сообщение содержит непустое поле UrlId
+</p>
+<p>     
+    <b>Уже имеется</b>:
+    <a href="#sec-1-4">Context provider</a> - может вытащить uri из сообщения.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-3" class="outline-4">
+<h4 id="sec-1-1-3"><span class="section-number-4">1.1.3</span> A003 Найти по полям Domain, UrlId, Device, Manufacture, Country и др. нужный url для редиректа и записать его в поле redirect</h4>
+<div class="outline-text-4" id="text-1-1-3">
+
+<p>    Поиск ведется по дереву - первый уровень этого дерева - домены клиентов, второй уровень - uriId и только 
+    потом уже параметры, которые были извлечены из контекста запроса.
+</p>
+<p>    
+    <b>Предусловие</b>: все поля непустые
+    <b>Постусловие</b>: поле redirect либо пусто, либо содержит нужный url
+</p>
+<p>    
+    <b>Уже имеется</b>:
+    В данный момент дерево поиска не реализовано. Поиск по базе с множеством условий крайне неудобен.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-4" class="outline-4">
+<h4 id="sec-1-1-4"><span class="section-number-4">1.1.4</span> А004 Выполнить редирект на нужную страницу</h4>
+<div class="outline-text-4" id="text-1-1-4">
+
+<p>    Сообщение содержит непустое поле redirect c url. произвести редирект по заданному url
+</p>
+<p>     
+    <b>Предусловие</b>: поле redirect содержит url
+</p>
+<p>
+    <b>Постусловие</b>: пользователю отправлен ответ с редиректом на заданную страницу
+</p>
+<p>
+    <b>Уже имеется</b>: <a href="#sec-1-5">Как работает редирект?</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-5" class="outline-4">
+<h4 id="sec-1-1-5"><span class="section-number-4">1.1.5</span> A005 Возвратить пользователю страницу с 404 кодом ошибки</h4>
+<div class="outline-text-4" id="text-1-1-5">
+
+<p>    В ответ на запросшенный url отправить пользователю html страницу от имени 1derlink с 404 кодом ошибки
+</p>
+<p>
+    <b>Постусловие</b>: пользователю отправлена страница с 404 кодом ошибки
+</p>
+<p>    
+    <b>Уже имеется</b>: <a href="#sec-1-5">Как работает редирект?</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-6" class="outline-4">
+<h4 id="sec-1-1-6"><span class="section-number-4">1.1.6</span> A006 Выбрать редирект, либо 404 ошибку</h4>
+<div class="outline-text-4" id="text-1-1-6">
+
+<p>    Если сообщение содержит поле redirect c заданным url, то перенаправить сообщение на актор A004
+</p>
+<p>
+    <b>Постусловие</b>: следующий актор в карте либо A004, либо A005
+</p>
+<p>
+    <b>Уже имеется</b>: <a href="#sec-1-5">Как работает редирект?</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7" class="outline-4">
+<h4 id="sec-1-1-7"><span class="section-number-4">1.1.7</span> A007 Добавить в сообщение поле Device, которое содержит идентификатор класса устройств, с которого обращается незарегистрированный пользователь</h4>
+<div class="outline-text-4" id="text-1-1-7">
+
+<p>    Принцип тот же, что и для актора A001. В случае невозможности определить устройство в поле пишется 
+    значение other.
+</p>
+<ul>
+<li>Рекомендуется для таких полей пользоваться значениями, которые использует <a href="https://metrika.yandex.ru/">yandex.metrika</a>
+</li>
+<li>Обратите внимание, что яндекс метрика некоторые параметры группирует, например, смартфон Asus, смартфон самсунг
+</li>
+<li>У нас может появиться потребность задать правило для всех смартфонов, либо только для смартфонов самсунг
+</li>
+<li>Рекомендуется разбить значение смартфон самсунг на два поля Device и Manufacture
+</li>
+</ul>
+
+
+<p>
+    <b>Предусловие</b>: любой произвольный запрос
+</p>
+<p>
+    <b>Постусловие</b>: сообщение содержит непустое поле Device
+</p>
+<p>
+    <b>Уже имеется</b>: 
+</p><ol>
+<li>метод <code>LinkProcessor.detectDeviceType(String)</code>, который по значению User-Agent определяет тип девайса: detectDeviceType(User-Agent) &isin; {mobile, tablet, desktop}
+</li>
+<li><a href="#sec-1-4">Context provider</a> - может вытащит User-Agent пользователя из контекста сообщения.
+</li>
+</ol>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-8" class="outline-4">
+<h4 id="sec-1-1-8"><span class="section-number-4">1.1.8</span> A008 Добавить в сообщение поле Manufacture, которое содержит наименование производителя устройства, с которого обращается незарегистрированный пользователь</h4>
+<div class="outline-text-4" id="text-1-1-8">
+
+<p>    В случае невозможности определить производителя в поле пишется значение other
+</p>
+<p>
+    <b>Предусловие</b>: любой произвольный запрос
+</p>
+<p>
+    <b>Постусловие</b>: сообщение содержит непустое поле Manufacture
+</p>
+<p>
+    <b>Уже имеется</b>: в данный момент никаких методов для определения девайся пользователя на проекте нет.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-9" class="outline-4">
+<h4 id="sec-1-1-9"><span class="section-number-4">1.1.9</span> A009 Добавить в сообщение поле Country, которое содержит наименование страны, из которой обращается незарегистрированный пользователь</h4>
+<div class="outline-text-4" id="text-1-1-9">
+
+<p>    В случае невозможности определить страну в поле пишется значение other
+</p>
+<p>
+    <b>Предусловие</b>: любой произвольный запрос
+</p>
+<p>
+    <b>Постусловие</b>: сообщение содержит непустое поле Country
+</p>
+<p>
+    <b>Уже имеется</b>: в данный момент никаких методов для определения страны пользователя на проекте нет.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Замечания</h3>
+<div class="outline-text-3" id="text-1-2">
+
+<ul>
+<li>При выполнении акторов A007, A008, A009 и т.д. ожидается, что никаких эксепшенов вылетать не может, то есть все checkedexception должны быть отловлены внутри. Если же все-таки какое-либо исключение вылетает - это ошибка, которая была допущена в коде, так как мы ожидали, что исключений не будет, надо будет возвратить страницу с Internal Server Error - так как произошла непредвиденная ошибка именно у нас.
+</li>
+<li>A003, A006 должны работать без ошибок, поэтому замечание тоже, что и для A007-A009&hellip;
+</li>
+<li>Исключения в A001, A002 могут быть вызваны неправильным форматом урла, а значит в этом случае 
+</li>
+</ul>
+
+<p>   вылет из этих акторов по исключению должен приводить в отправке 404 ошибки
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Контекст сообщения</h3>
+<div class="outline-text-3" id="text-1-3">
+
+<p>    Приходит внутри сообщения. Содержит HTTP заголовки, домен третьего уровня, ip-адрес пользователя etc.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> ContextProvider</h3>
+<div class="outline-text-3" id="text-1-4">
+
+<p>    Вспомогательный класс, который умеет работать с <a href="#sec-1-3">контекстом сообщения</a>.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Как работает редирект?</h3>
+<div class="outline-text-3" id="text-1-5">
+
+<p>    В текущей реализации для обработки HTTP GET запросов всегда используется одна и та же цепочка.
+    Перенаправление производится в соответствии с наличием поля <code>redirectTo</code>. То есть,
+    после отработки цепочки, обрабатывающей GET, конечная точка проверяет наличие данного поля,
+    и указывает его содержимое в качестве redirect target. В случае же отсутствия поля <code>redirectTo</code>
+    пользователю будет возвращён HTTP 404.
+</p></div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2016-03-05T17:19+0600</p>
+<p class="author">Author: user</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

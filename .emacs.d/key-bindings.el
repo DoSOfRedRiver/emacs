@@ -17,3 +17,5 @@
                                  (open-line 1)
                                  (next-line 1)
                                  (yank)))
+
+(define-key global-map (kdb "C-tab") 'ibuffer)
