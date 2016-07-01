@@ -19,3 +19,4 @@
                                  (yank)))
 
 (define-key global-map (kbd "C-<tab>") 'ibuffer)
+(define-key global-map (kbd "<f1>") 'sunrise-cd)
