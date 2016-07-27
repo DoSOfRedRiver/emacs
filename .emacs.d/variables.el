@@ -10,3 +10,4 @@
 (global-set-key (kbd "<f10>") 'bookmark-bmenu-list)
 (set-face-background hl-line-face "#d3d3d3")
 (toggle-frame-fullscreen)
+(add-to-list 'default-frame-alist '(fullscreen . fullboth)) 

@@ -15,6 +15,7 @@
 (load "~/.emacs.d/key-bindings.el")
 (load "~/.emacs.d/hooks.el")
 (load "~/.emacs.d/variables.el")
+(load "~/.emacs.d/multiply-cursors-settings.el")
 ;;(load "~/.emacs.d/org-dashboard/org-dashboard")
 
 
