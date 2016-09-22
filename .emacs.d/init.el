@@ -6,7 +6,6 @@
 
 ;;loads
 (load "~/.emacs.d/el-get-settings")
-(load "~/.emacs.d/rust-mode")
 (load "~/.emacs.d/hydra-snippets")
 (load "~/.emacs.d/key-chord")
 (load "~/.emacs.d/agenda-settings")
@@ -17,6 +16,9 @@
 (load "~/.emacs.d/variables.el")
 (load "~/.emacs.d/multiply-cursors-settings.el")
 (load "~/.emacs.d/ace-jump-mode.el")
+(load "~/.emacs.d/python-mode.el")
+(load "~/.emacs.d/rust-mode")
+
 ;;(load "~/.emacs.d/org-dashboard/org-dashboard")
 
 
