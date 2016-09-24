@@ -18,6 +18,7 @@
 (load "~/.emacs.d/ace-jump-mode.el")
 (load "~/.emacs.d/python-mode.el")
 (load "~/.emacs.d/rust-mode")
+(load "~/.emacs.d/popwin-mode.el");
 
 ;;(load "~/.emacs.d/org-dashboard/org-dashboard")
 
