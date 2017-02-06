@@ -21,3 +21,6 @@
 (define-key global-map (kbd "C-<tab>") 'ibuffer)
 (define-key global-map (kbd "<f1>") 'sunrise-cd)
 (define-key global-map (kbd "M-x") 'helm-M-x)
+(define-key global-map (kbd "<f9>") '(lambda ()
+                                       (interactive)
+                                       (revert-buffer t t)))
