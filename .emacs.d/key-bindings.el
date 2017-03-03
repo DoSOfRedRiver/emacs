@@ -1,5 +1,5 @@
 (define-key global-map (kbd "C-x p") 'prev-window)
-
+(global-set-key (kbd "<f10>") 'bookmark-bmenu-list)
 
 ;;chords
 (require 'key-chord)
@@ -21,6 +21,7 @@
 (define-key global-map (kbd "C-<tab>") 'ibuffer)
 (define-key global-map (kbd "<f1>") 'sunrise-cd)
 (define-key global-map (kbd "M-x") 'helm-M-x)
-(define-key global-map (kbd "<f9>") '(lambda ()
+(define-key global-map (kbd "C-x C-f") 'helm-find-files)
+(define-key global-map (kbd "<f5>") '(lambda ()
                                        (interactive)
                                        (revert-buffer t t)))

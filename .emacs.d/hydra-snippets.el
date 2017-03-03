@@ -1,8 +1,10 @@
 
 (defhydra hydra-switch-tab (global-map "C-x")
-  "switch tabbars"
-  ("<right>" tabbar-forward "next")
-  ("<left>" tabbar-backward "previous"))
+  "switch buffers"
+  ("<right>" windmove-right "right")
+  ("<left>" windmove-left  "left")
+  ("<up>" windmove-up "up")
+  ("<down>" windmove-down "down"))
 
 
 (defhydra hydra-switch-window (global-map "C-x")
