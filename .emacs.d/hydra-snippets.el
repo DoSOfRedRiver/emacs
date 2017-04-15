@@ -19,12 +19,6 @@
   ("<left>" tabbar-backward-group "previous"))
 
 
-(defhydra hydra-switch-buffer (global-map "C-x")
-  "switch buffers"
-  ("<up>" next-buffer "next")
-  ("<down>" previous-buffer "previous"))
-
-
 (defhydra hydra-undo (global-map "C-x")
   "undo changes"
   ("u" undo "undo"))
