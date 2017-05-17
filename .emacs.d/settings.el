@@ -30,3 +30,5 @@
 
 
 (add-to-list 'default-frame-alist '(fullscreen . fullboth)) 
+
+(global-undo-tree-mode)
