@@ -25,6 +25,10 @@
 ;;set company to start search from one character
 (setq company-minimum-prefix-length 1)
 
+;;case sensitive company autocomplete
+(setq company-dabbrev-downcase nil)
+
+
 ;;set current line's highlight color
 (set-face-background hl-line-face "#f5d69b")
 
